@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: orangered;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border: 10px solid white;
+        }
+
+        td {
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        img {
+            width: 156px;
+            background-color: gainsboro;
+        }
+
+        button {
+            width: 156px;
+            background-color: gainsboro;
+            color: blue;
+        }
+    </style>
+
+    <script>
+        var n = 1
+
+        function change_pic() {
+            switch (n) {
+                case 1: document.getElementById('pictures').src = "./pic/1ccc.jpg"; break;
+                case 2: document.getElementById('pictures').src = "./pic/294758918_1036464017068149_1751725504055237183_n.jpg"; break;
+                case 3: document.getElementById('pictures').src = "./pic/40358484.jpg"; break;
+                case 4: document.getElementById('pictures').src = "./pic/42428639.jpg"; break;
+                case 5: document.getElementById('pictures').src = "./pic/42557286.jpg"; break;
+                case 6: document.getElementById('pictures').src = "./pic/42635082.jpg"; break;
+                case 7: document.getElementById('pictures').src = "./pic/Untitled-59.jpg"; break;
+            }
+        }
+
+        if (n == 1) {
+            document.getElementById('bback').disabled = true;
+            document.getElementById('bforward').disabled = false;
+        } else if (n == 7) {
+            document.getElementById('bback').disabled = false;
+            document.getElementById('bforward').disabled = true;
+        } else {
+            document.getElementById('bback').disabled = false;
+            document.getElementById('bforward').disabled = false;
+        }
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <img id="pictures" src="./pic/1ccc.jpg" alt="">
+            </td>
+            <td>
+                <button onclick="n=1;change_pic()">pic 1</button>
+                <button onclick="n=2;change_pic()">pic 2</button>
+                <button onclick="n=3;change_pic()">pic 3</button>
+                <button onclick="n=4;change_pic()">pic 4</button>
+                <button onclick="n=5;change_pic()">pic 5</button>
+                <button onclick="n=6;change_pic()">pic 6</button>
+                <button onclick="n=7;change_pic()">pic 7</button>
+                <button id="bback" style="width: 75px;cursor: grab;" onclick="n--;change_pic();">back</button>
+                <button id="bforward" style="width: 75px;cursor: grab;" onclick="n++;change_pic();">next</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

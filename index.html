@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        <!-- alert("Hello"); -->
+    </script>
+</head>
+
+<body>
+    <div>
+        <button onclick="showMessage()">click</button>
+        <button onclick="clickHandler()">Calculate Circle Area</button>
+
+    </div>
+
+    <script src="./my-script.js"></script>
+    <script src="./pi.js"></script>
+    <script src="./asyncAwait.js"></script>
+    <script>
+        var radius = 3;
+        x = 4;
+        var y = 2;
+
+        document.write("Area Circle radius 3 = " + pi * radius * radius);
+        document.write("<br>");
+        document.write("(" + x + " + " + y + ")*2 = " + calculate(x, y));
+        document.write("<br>")
+        document.write("(" + x + " + " + y + ")/5 = " + calculate2(x, y));
+    </script>
+</body>
+
+</html>

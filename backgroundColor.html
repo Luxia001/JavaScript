@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background color</title>
+    <style>
+        body {
+            margin: 0px 0px;
+        }
+
+        div {
+            width: 512px;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 0px;
+            padding: 0px;
+            border-spacing: 0px;
+        }
+    </style>
+    <script>
+        var addary = new Array()
+        addary[0] = new Array(0, 1, 0)
+        addary[1] = new Array(-1, 0, 0)
+        addary[2] = new Array(0, 0, 1)
+        addary[3] = new Array(0, -1, 0)
+        addary[4] = new Array(1, 0, 0)
+        addary[5] = new Array(0, 0, -1)
+        addary[6] = new Array(255, 1, 1)
+        var clrary = new Array(360)
+
+        for (i = 0; i < 6; ++i)
+            for (j = 0; j < 60; ++j) {
+                clrary[60 * i + j] = new Array(3)
+                for (k = 0; k < 3; ++k) {
+                    clrary[60 * i + j][k] = addary[6][k]
+                    addary[6][k] += (addary[i][k] * 4)
+                }
+            }
+
+        function capture() {
+            document.getElementById('wheel').onmousemove = moved;
+        }
+        function moved(e) {
+            var y = e.pageX
+            var x = e.pageY
+            x = 4 * x; y = 4 * (y - 128)
+            var sx = x - 512
+            var sy = y - 512
+            var qx = (sx < 0) ? 0 : 1
+            var qy = (sy < 0) ? 0 : 1
+            var q = 2 * qy + qx
+            var quad = new Array(-180, 360, 180, 0)
+            var xa = Math.abs(sx)
+            var ya = Math.abs(sy)
+            var d = ya * 45 / xa
+            if (ya > xa) d = 90 - (xa * 45 / ya)
+            var deg = Math.floor(Math.abs(quad[q] - d))
+            var n = 0
+            sx = Math.abs(x - 512)
+            sy = Math.abs(y - 512)
+            var r = Math.sqrt((sx * sx) + (sy * sy))
+            if (x == 512 & y == 512) {
+                var c = "000000"
+            } else {
+                for (i = 0; i < 3; ++i) {
+                    var r2 = clrary[deg][i] * r / 256
+                    if (r > 256) r2 += Math.floor(r - 256)
+                    if (r > 255) r2 = 255
+                    n = 256 * n + Math.floor(r2)
+                }
+                var c = n.toString(16)
+                while (c.length < 6) c = "0" + c
+            }
+
+            document.getElementById('color').style.backgroundColor = "#" + c
+            document.getElementById('number').value = "#" + c
+            return false
+
+        }
+    </script>
+</head>
+
+<body onload="capture()">
+ <div id="color">
+    <table>
+        <tr><td>
+            <img id="wheel" src="color_wheel.png" width="256" height="256" alt="">
+        </td></tr>
+        <tr><td>
+            <br><input id="number" type="text" size="27"><br><br>
+        </td></tr>
+    </table>
+ </div>
+</body>
+
+</html>
