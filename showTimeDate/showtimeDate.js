@@ -30,7 +30,7 @@ function convert(input) {
   return output.substring(output.length - 2, output.length);
 }
 
-function now() {
+function Time() {
   dt = new Date();
   year = dt.getFullYear();
   month = dt.getMonth();
@@ -89,5 +89,5 @@ function now() {
   document.getElementById("dPanel").innerHTML =
     today0 + "<br>" + today1 + "<br>" + today2;
   console.log();
-  setTimeout("now()", 1000);
+  setTimeout("Time()", 1000);
 }
