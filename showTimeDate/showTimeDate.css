@@ -1,0 +1,19 @@
+#dPanel {
+  border: 1px solid black;
+  background-color: #ffd200;
+  font-family: verdana;
+  font-size: 45px;
+  width: 1000px;
+  height: 250px;
+  padding: 4px;
+}
+
+#pCalendar {
+  position: absolute;
+  visibility: hidden;
+  margin-top: 5%;
+}
+
+#C {
+  background-color: #c9a6f7;
+}

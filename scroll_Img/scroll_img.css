@@ -1,0 +1,15 @@
+body {
+    background-color: #33e0d6;
+}
+
+#panel {
+    position: absolute;
+    clip: rect(320px,200px,640px,0px);
+    top: -320px;
+}
+
+img {
+    width: 200px;
+    height: 160px;
+}
+

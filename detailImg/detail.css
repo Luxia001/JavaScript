@@ -1,0 +1,16 @@
+.tooltip {
+    position: absolute;
+    border: 1px solid black;
+    font-family: Verdana;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 160px;
+    background-color: azure;
+}
+
+img {
+    width: 160px;
+    height: 120px;
+}
