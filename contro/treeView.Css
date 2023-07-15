@@ -1,0 +1,41 @@
+body {
+  background-color: #ddffaa;
+}
+
+.head {
+  cursor: pointer;
+  font-weight: bold;
+  list-style-image: url(fold.gif);
+}
+
+.list {
+  list-style-image: url(list.gif);
+}
+
+.menu {
+  border: 1px solid black;
+  padding: 4px;
+  background-color: #ffd200;
+  font-family: verdana;
+  font-size: 10px;
+  line-height: 10px;
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  visibility: hidden;
+}
+
+table.panel {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+table.panel td {
+  padding: 0;
+}

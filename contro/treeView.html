@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./treeView.Css">
+    <script src="./treeView.js"></script>
+    <script src="./menubar.js"></script>
+</head>
+
+<body>
+    <div class="menu" onmouseover="popUp(this,'elMenu1',1,-5,23)" style="display: inline;">News</div>
+    <div class="menu" onmouseover="popUp(this,'elMenu2',1,-5,23)" style="display: inline;">Games</div>
+    <div class="menu" onmouseover="popUp(this,'elMenu3',1,-5,23)" style="display: inline;">Software</div>
+    <!-- elMenu1 -->
+    <table class="panel" id="elMenu1">
+        <tr>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+            <td>
+                <div class="menu"><a href="">CNN</a></div>
+                <div class="menu"><a href="">ABC</a></div>
+                <div class="menu"><a href="">Vancouver</a></div>
+            </td>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" onmouseover="popDown(1);">&nbsp;</td>
+        </tr>
+    </table>
+    <!-- elMenu2 -->
+    <table class="panel" id="elMenu2">
+        <tr>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+            <td>
+                <div class="menu"><a href="">GameSpot</a></div>
+                <div class="menu"><a href="">Happy Puppy</a></div>
+                <div class="menu"><a href="">Game Center</a></div>
+            </td>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" onmouseover="popDown(1);">&nbsp;</td>
+        </tr>
+    </table>
+    <!-- elMenu3 -->
+    <table class="panel" id="elMenu3">
+        <tr>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+            <td>
+                <div class="menu"><a href="">outer 1</a></div>
+                <div class="menu"><a href="">outer 2</a></div>
+            </td>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+        </tr>
+        <tr>
+            <td onmouseover="popDown(1);">&nbsp;</td>
+            <td colspan="2">
+                <div class="menu" onmouseover="popUP(this,'elMenu31', 2,98,-17)">nested1</div>
+                <div class="menu" onmouseover="popUP(this,'elMenu32', 2,98,-17)">nested2</div>
+            </td>
+        </tr>
+        <tr>
+            <td onmouseover="popDown(1)">&nbsp;</td>
+            <td>
+                <div class="menu"><a href="">outer 3</a></div>
+            </td>
+            <td onmouseover="popDown(1)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" onmouseover="popDown(1)">&nbsp;</td>
+        </tr>
+    </table>
+
+    <!-- panel elMenu31 -->
+    <table class="panel" id="elMenu31">
+        <tr>
+            <td colspan="2" onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="menu"><a href="">GameSpot1</a></div>
+                <div class="menu"><a href="">HappyPuppy1</a></div>
+                <div class="menu"><a href="">GameCenter1</a></div>
+            </td>
+            <td onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+    </table>
+    <!-- panel elMenu32 -->
+    <table class="panel" id="elMenu32">
+        <tr>
+            <td colspan="2" onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="menu"><a href="">GameSpot2</a></div>
+                <div class="menu"><a href="">HappyPuppy2</a></div>
+                <div class="menu"><a href="">GameCenter2</a></div>
+            </td>
+            <td onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" onmouseover="popDown(2)">&nbsp;</td>
+        </tr>
+    </table>
+
+    <ul>
+        <li>Tree</li>
+        <li class="head" id="fd_head">News</li>
+        <ul class="list" id="fd_list" style="display: none;">
+            <li><a href="">CNN</a></li>
+            <li><a href="">ABC</a></li>
+            <li><a href="">Vancouver</a></li>
+        </ul>
+
+        <li class="head" id="fd_head">Games</li>
+        <ul class="list" id="fd_list" style="display: none;">
+            <li><a href="">GameSpot</a></li>
+            <li><a href="">Happy Puppy</a></li>
+            <li><a href="">Game Center</a></li>
+        </ul>
+
+        <li class="head" id="fd_head">Software</li>
+        <ul class="list" id="fd_list" style="display: none;">
+            <li><a href="">nested 1</a></li>
+            <li><a href="">nested 2</a></li>
+            <li class="head" id="fd_head">nested 3</li>
+            <ul class="head" id="fd_list" style="display: none;">
+                <li><a href="">sub 3.1</a></li>
+                <li><a href="">sub 3.2</a></li>
+            </ul>
+        </ul>
+
+        <li><a href="">outer 3</a></li>
+        <li><a href="">outer 4</a></li>
+    </ul>
+
+    <header id="nav-menu" aria-label="navigation bar">
+        <div class="container">
+            <div class="nav-start">
+                <a class="logo" href="/">
+                    <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/logo.png?raw=true"
+                        width="35" height="35" alt="Inc Logo" />
+                </a>
+                <nav class="menu">
+                    <ul class="menu-bar">
+                        <li>
+                            <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-haspopup="true"
+                                aria-expanded="false" aria-label="browse">
+                                Browse
+                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="dropdown1" class="dropdown">
+                                <ul role="menu">
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#best-of-the-day">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/botd.svg"
+                                                class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Best of the day</span>
+                                                <p>Shorts featured today by curators</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#featured-streams">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/fs.svg"
+                                                class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Featured Streams</span>
+                                                <p>Leading creatives livestreams</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#subscriptions">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/sp.svg"
+                                                class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Subscriptions</span>
+                                                <p>Gain exclusive access</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#creative-feed">
+                                            <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/cf.svg"
+                                                class="icon" />
+                                            <div>
+                                                <span class="dropdown-link-title">Creative Feed</span>
+                                                <p>See trending creations</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul role="menu">
+                                    <li class="dropdown-title">
+                                        <span class="dropdown-link-title">Browse by apps</span>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#adobe-xd">
+                                            <img
+                                                src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/xd.svg" />
+                                            Adobe XD
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#after-effect">
+                                            <img
+                                                src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/ae.svg" />
+                                            After Effect
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#sketch">
+                                            <img
+                                                src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/sketch.svg" />
+                                            Sketch
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#indesign">
+                                            <img
+                                                src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/indesign.svg" />
+                                            Indesign
+                                        </a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#figma">
+                                            <img
+                                                src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/figma.svg" />
+                                            Figma
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-haspopup="true"
+                                aria-expanded="false" aria-label="discover">
+                                Discover
+                                <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div id="dropdown2" class="dropdown">
+                                <ul role="menu">
+                                    <li>
+                                        <span class="dropdown-link-title">Browse Categories</span>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#branding">Branding</a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#illustrations">Illustration</a>
+                                    </li>
+                                </ul>
+                                <ul role="menu">
+                                    <li>
+                                        <span class="dropdown-link-title">Download App</span>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#mac-windows">MacOS & Windows</a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a class="dropdown-link" href="#linux">Linux</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="nav-link" href="/">Jobs</a></li>
+                        <li><a class="nav-link" href="/">Livestream</a></li>
+                        <li><a class="nav-link" href="/">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-end">
+                <div class="right-container">
+                    <form class="search" role="search">
+                        <input type="search" name="search" placeholder="Search" />
+                        <i class="bx bx-search" aria-hidden="true"></i>
+                    </form>
+                    <a href="#profile">
+                        <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/user.jpg?raw=true"
+                            width="30" height="30" alt="user image" />
+                    </a>
+                    <button class="btn btn-primary">Create</button>
+                </div>
+
+                <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-menu" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page markup: Not important -->
+    <main style="padding: 1.5rem; margin: 0 auto; max-width: 1300px">
+        <h1>Navigation Bar</h1>
+        <p>
+            Want to learn how to make this?
+            <a style="text-decoration: underline; color: var(--primary-color)"
+                href="https://www.freecodecamp.org/news/how-to-build-a-responsive-navigation-bar-with-dropdown-menu-using-javascript/"
+                target="_blank">Read the tutorial</a>
+        </p>
+    </main>
+</body>
+
+</html>
